@@ -1,0 +1,280 @@
+<html>
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+  
+body{
+	background: #FF6347;
+    font-family: 'Roboto', sans-serif;
+	color: #717171;
+}
+
+.icon-bar {
+  width: 100%;
+  background-color: #FF6347;
+  overflow: auto;
+}
+
+.icon-bar a {
+     float: left;
+    width: 14%;
+    text-align: center;
+    padding: 8px 0px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 28;
+}
+
+.icon-bar a:hover {
+  background-color: FC9079;
+}
+
+.search-box {
+    position: relative;
+}
+.search-box .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    left: 15px;
+    top: 0px;
+}
+.search-box .glyphicon:before {
+    color: white;
+    transition: all 0.2s linear;
+}
+.search-box input {
+    color: #fff;
+    padding-left: 60px;
+    background: whitesmoke;
+    border:0;
+    outline: none !important;
+    transition: all 0.2s linear;
+}
+.search-box input:focus {
+    background: #fff !important;
+    outline: 0;
+    color: #333;
+}
+.search-box input:focus + .glyphicon:before {
+    color: #333;
+}
+.search-box input:hover {
+    background: #78909c;
+}
+.form-control{
+    width: 70%;
+    margin-top: 40;
+    margin-right: auto;
+    margin-bottom: 40;
+    margin-left: auto;
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+}
+.nav-pills .nav-link
+{
+    color: #717171;
+    font-weight: 600;
+}
+th, td {color: #717171;}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link
+{
+	background-color:#ff5722;
+}
+.btn-primary
+{
+	background: #ff5722;
+    border-color: #ff5722;
+}
+nav.bg-dark
+{
+	background-color: #f15432!important;
+}
+.profile-edit-btn{
+	border: none;
+	border-radius: 1.5rem;
+	width: 70%;
+	padding: 2%;
+	color: #6c757d;
+	margin: 10px 10px;
+    margin-right: 20px;
+    margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.profile-edit-btn:hover{
+	opacity: 1;
+}
+.button {
+    background-color: #FF6347;
+    border: none;
+    color: white;
+    padding: 10;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 10px 10px;
+    margin-bottom: -00%;
+}
+.button5 {
+  border-radius: 50%;
+  opacity:0.8;
+}
+.button5:hover {
+  opacity:1;
+}
+</style>
+   
+<body>
+
+<div class="icon-bar">
+	  <a class="active" href="#"><i class="fa fa-home"></i></a> 
+	  <a href="#"><i class="fa fa-search"></i></a> 
+	  <a href="#"><i class="fa fa-globe"></i></a>
+	  <a href="#"><i class="fa fa-calendar"></i></a>
+	  <a href="#"><i class="fa fa-bell"></i></a> 
+	  <a href="#"><i class="fa fa-user"></i></a> 
+	  <a href="#"><i class="fa fa-sign-out"></i></a> 
+</div>
+<div class="search-box">
+    <input value="Search" type="text" class="form-control" />
+    <i class="glyphicon glyphicon-search"></i>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 emp-profile">
+                <div class="row p-6">
+				                   <div class="col-md-2">
+								   						<button class="button button5"><a><i class="fa fa-github-alt"></i></a> </button>
+						<button class="button button5"><a><i class="fa fa-linkedin-square"></i></a> </button>
+						
+								    
+								    </div>
+									<div class="col-md-2">
+
+								    </div>
+													                   <div class="col-md-2">
+								    </div>
+													                   <div class="col-md-2">
+								    </div>
+													                   <div class="col-md-2">
+
+								    </div>
+
+                    <div class="col-md-2">
+			<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+
+                    </div>
+				</div>
+            
+			<form method="post">
+
+		<div class="row p-5">
+                    <div class="col-md-4">
+                        			<div class="profile-img">
+					<img src="https://i.imgur.com/M8B4JUs.png" alt="">
+	</div>
+					<div class="card mt-3 shadow">
+					<div class="card-body text-center">
+						<span class="text-bold">"You don't need wings to fly, only courage."</span>
+						<button class="btn btn-sm btn-link"><a><i class="fa fa-pencil"></i></a></button>
+					</div>
+				</div>
+
+	</div>
+
+			<div class="col-lg-8 my-2">
+				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				  	<li class="nav-item" role="presentation">
+				    	<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
+				  	</li>
+				  	<li class="nav-item" role="presentation">
+			  	  		<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Academics</a>
+				  	</li>
+				  	<li class="nav-item" role="presentation">
+				    	<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+				  	</li>
+				</ul>
+				<div class="tab-content" id="pills-tabContent">
+				  	<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				  		<div class="card py-2 shadow">
+					  		<ul class="list-group list-group-flush">
+							  	<li class="list-group-item"><b><a><i class="fa fa-drivers-license-o"></i></a> Student Name</b> Prajna Bhat </li>
+							  	<li class="list-group-item"><b><a><i class="fa fa-user-circle-o"></i></a> Student ID</b> 685784938 </li>
+							  	<li class="list-group-item"><b><a><i class="fa fa-check"></i></a> Student Status</b> Active </li>
+	
+							  	<li class="list-group-item"><b><a><i class="fa fa-venus-mars"></i></a> Gender</b> Female </li>
+							  	<li class="list-group-item"><b><a><i class="fa fa-birthday-cake"></i></a> Birthday</b> 29/02/1993 </li>
+							</ul>
+						</div>
+				  	</div>
+				  	<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				  		<div class="card shadow py-2 px-3">
+				  			<div class="card-body">
+				  				<h3>Academic Details</h3>
+				  				<ul class="list-group mb-5">
+								  	<li class="list-group-item"><b>Course:</b> Interaction Design </li>
+								  	<li class="list-group-item"><b>Semester:</b> 2 </li>
+								  	<li class="list-group-item"><b>CGPA:</b> 8.1 </li>
+								  	<li class="list-group-item"><b>Enrollment Date:</b> 10<sup>th</sup> August 2020 </li>
+								</ul>
+								<h3>Subjects Enrolled</h3>
+				  				<table class="table table-bordered">
+				  					<thead>
+				  						<th>Subject</th>	
+				  						<th>Faculty</th>
+				  					</thead>
+				  					<tbody>
+				  						<tr><td>Storytelling and Sensemaking</td><td>John Cena</td></tr>	
+				  						<tr><td>Digital Experience Design</td><td>John Mayor</td></tr>	
+				  						<tr><td>Fundamentals of Interaction Design</td><td>Johnny Bravo</td></tr>	
+				  						<tr><td>Computer Graphics</td><td>Johnny Depp</td></tr>	
+				  					</tbody>
+				  				</table>
+				  			</div>
+				  		</div>
+				  	</div>
+				  	<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+				  		<div class="card py-2 shadow">
+					  		<ul class="list-group list-group-flush">
+							  <li class="list-group-item"><b><i class="fa fa-map-marker"></i> Address  </b> <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+							  	<li class="list-group-item"><b><a><i class="fa fa-mobile-phone"></i></a>   Mobile</b> 123-456-789-1 </li>
+
+							  	<li class="list-group-item"><b><a><i class="fa fa-envelope"></i></a> Email</b> PrajnaBhat@sample.com </li>
+							</ul>
+						</div>
+				  	</div>
+				</div>
+
+			</div>
+			</div>
+			</form>
+			</div>
+			</div>
+			</div>
+</body>
+</html> 
